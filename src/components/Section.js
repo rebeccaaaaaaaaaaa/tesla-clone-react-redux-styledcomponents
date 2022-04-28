@@ -41,6 +41,7 @@ const Wrap = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
