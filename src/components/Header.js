@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import {MdMenu} from 'react-icons/md'
 function Header() {
   return (
     <Container>
@@ -18,7 +18,9 @@ function Header() {
         <RightMenu>
           <a href=""> Shop </a>
           <a href=""> Tesla Account </a>
+          <CustomeMenu />
         </RightMenu>
+        
     </Container>
   )
 }
@@ -33,6 +35,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
 
  
 `
@@ -49,13 +53,27 @@ const Menu = styled.div`
     flex-wrap: nowrap;
   }
 
+  @media (max-width: 768px) {
+    display: none;
+
+  }
+
 `
 
 const RightMenu = styled.div`
+
+  display: flex;
+  align-items: center;
+
 a{
   font-weight: 600;
   text-transform: uppercase;
   margin-right :10px;
   flex-wrap: nowrap;
 }
+`
+
+const CustomeMenu = styled(MdMenu)`
+  cursor: pointer;
+
 `
