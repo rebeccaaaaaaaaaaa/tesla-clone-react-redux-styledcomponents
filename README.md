@@ -15,4 +15,6 @@ https://www.youtube.com/watch?v=lUeS9Wsj6dk
 - Reaproveitamento funcional de componentes
 - Utilização do React Reveal
 
-# Demonstração
+#  [Demonstração]()
+
+![plot](https://raw.githubusercontent.com/rebeccaaaaaaaaaaa/tesla-clone-react-redux-styledcomponents/main/public/preview.png)
