@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {MdMenu} from 'react-icons/md'
 import {MdOutlineClose} from "react-icons/md"
 function Header() {
+
+    const [isOpen, setIsOpen] = useState(false)
+
   return (
     <Container>
         <a>
@@ -19,10 +22,10 @@ function Header() {
         <RightMenu>
           <a href=""> Shop </a>
           <a href=""> Tesla Account </a>
-          <CustomeMenu />
+          <CustomMenu onClick={() => setIsOpen(true)}/>
         </RightMenu>
-        <BurgerNav>
-          <CustomClose />
+        <BurgerNav show={isOpen}>
+          <CustomClose onClick={() => setIsOpen(false)}/>
           <li><a title="Model S" href="/models" >Model S</a></li>
           <li><a title="Model 3" href="/model3" >Model 3</a></li>
           <li><a title="Model X" href="/modelx" >Model X</a></li>
@@ -98,7 +101,7 @@ a{
 }
 `
 
-const CustomeMenu = styled(MdMenu)`
+const CustomMenu = styled(MdMenu)`
   cursor: pointer;
 
 `
@@ -116,6 +119,9 @@ const BurgerNav = styled.ul`
   display: flex;
   flex-direction: column;
   text-align: start;
+  transition: transform 0.3s ease-in-out;
+  transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
+
 
   li{
     padding: 15px 0;
